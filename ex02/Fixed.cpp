@@ -95,6 +95,19 @@ Fixed Fixed::operator++(int)
 	return (old);
 }
 
+Fixed& Fixed::operator--()
+{
+	this->fix_num--;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed old(*this);
+	this->operator--();
+	return (old);
+}
+
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a < b)
